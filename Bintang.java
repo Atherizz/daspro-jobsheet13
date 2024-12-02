@@ -4,7 +4,7 @@ public class Bintang {
     static int counter = 0;
     public static void main(String[] args) {
         
-        String prestasi [][] = new String[100][5];
+        String prestasi [][] = new String[100][4];
         String kategori [] = {"Nama", "NIM", "Jenis", "Tingkat", "Tahun"};  
         int tahun [] = new int[100];      
         
@@ -29,7 +29,8 @@ public class Bintang {
             // inputPrestasi(prestasi, kategori);
             break;
             case 2:
-            System.out.println("Tampilkan Semua Prestasi");
+            System.out.println("Seluruh Prestasi Yang Tercatat");
+            tampilan(prestasi, kategori, tahun);
             // showPrestasi(prestasi, kategori);
             break;   
             case 3:
@@ -43,20 +44,20 @@ public class Bintang {
             break;
         }
         
-        System.out.print("Apakah anda ingin mengakses menu lagi? (y/n)");
+        System.out.print("Apakah anda ingin mengakses menu lagi? (y/n) : ");
         lanjut = sc.next();
     } while (lanjut.equalsIgnoreCase("y"));
 }
 public static void inputPrestasi(String[][] prestasi, String[] kategori, int[] tahun) {
     Scanner sc = new Scanner(System.in);
 
-    System.out.print("Masukkan Nama Mahasiswa: ");
+    System.out.print("Masukkan Nama Mahasiswa     : ");
         prestasi[counter][0] = sc.nextLine();
-    System.out.print("Masukkan NIM Mahasiswa: ");
+    System.out.print("Masukkan NIM Mahasiswa      : ");
         prestasi[counter][1] = sc.nextLine();
-    System.out.print("Masukkan Jenis Prestasi: ");
+    System.out.print("Masukkan Jenis Prestasi     : ");
         prestasi[counter][2] = sc.nextLine();
-    System.out.print("Masukkan Tingkat Prestasi: ");
+    System.out.print("Masukkan Tingkat Prestasi   : ");
         prestasi[counter][3] = sc.nextLine();
 
         for (int i=0; i<=i;i++){
@@ -69,5 +70,14 @@ public static void inputPrestasi(String[][] prestasi, String[] kategori, int[] t
             }
         }
     counter++;
+    }
+    static void tampilan(String prestasi[][], String kategori[], int[] tahun) {
+
+        for (int i = 0; i < counter; i++) {
+            for (int j = 0; j < prestasi[0].length; j++) {
+                System.out.print(kategori[j] + " : \t" + prestasi[i][j] + " \t | ");
+            }          
+            System.out.println("Tahun : \t" + tahun[i]);                                                       
+        }
     }
 }
