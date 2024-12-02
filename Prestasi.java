@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Bintang {
-    static int counter = 0;
+public class Prestasi {
+     static int counter = 0;
     public static void main(String[] args) {
         
         String prestasi [][] = new String[100][4];

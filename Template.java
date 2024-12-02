@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Tugas {
+public class Template {
     static int counter = 0;
     public static void main(String[] args) {
         
