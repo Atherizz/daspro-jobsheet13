@@ -67,7 +67,7 @@ public class Prestasi {
         System.out.print("Masukkan Tingkat Prestasi (Lokal/Nasional/Internasional): ");
         prestasi[counter][3] = sc.nextLine();
     }
-        
+    
     for (int i=0; i<=i;i++){
         System.out.print("Masukkan Tahun Prestasi (2010 - 2024): ");
         tahun[counter] = sc.nextInt();
@@ -77,7 +77,7 @@ public class Prestasi {
             System.out.println("Tahun tidak valid. Silakan coba lagi!");
         }
     }
-    System.out.println("Data Prestasi Berhasil Ditambahkan.");
+    System.out.println("Data prestasi berhasil ditambahkan.");
     counter++;
     }
     static void tampilanPrestasi(String prestasi[][], String kategori[], int tahun[]) {
