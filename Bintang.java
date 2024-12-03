@@ -26,7 +26,6 @@ public class Bintang {
             case 1:
             System.out.println("Tambah Data Prestasi");
             inputPrestasi(prestasi, kategori, tahun);
-        
             break;
             case 2:
             System.out.println("Seluruh Prestasi Yang Tercatat");
