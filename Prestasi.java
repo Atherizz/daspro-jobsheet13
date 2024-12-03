@@ -34,6 +34,7 @@ public class Prestasi {
             break;   
             case 3:
             System.out.println("Analisis Prestasi");
+            analisisPrestasi(prestasi, kategori, tahun);
             break;    
             case 4:
             System.out.println("Keluar");   
@@ -59,6 +60,13 @@ public class Prestasi {
     prestasi[counter][2] = sc.nextLine();
     System.out.print("Masukkan Tingkat Prestasi   : ");
     prestasi[counter][3] = sc.nextLine();
+    
+    while (!prestasi[counter][3].equalsIgnoreCase("lokal") || !prestasi[counter][3].equalsIgnoreCase("nasional") || !prestasi[counter][3].equalsIgnoreCase("internasional")) {
+        System.out.println("input tidak valid!   : ");
+        System.out.print("Masukkan Tingkat Prestasi   : ");
+        prestasi[counter][3] = sc.nextLine();
+    }
+
 
     for (int i=0; i<=i;i++){
     System.out.print("Masukkan Tahun Prestasi(2010 - 2024): ");
