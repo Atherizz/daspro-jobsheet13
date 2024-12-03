@@ -61,7 +61,7 @@ public class Prestasi {
     System.out.print("Masukkan Tingkat Prestasi   : ");
     prestasi[counter][3] = sc.nextLine();
     
-    while (!prestasi[counter][3].equalsIgnoreCase("lokal") || !prestasi[counter][3].equalsIgnoreCase("nasional") || !prestasi[counter][3].equalsIgnoreCase("internasional")) {
+    while (!prestasi[counter][3].equalsIgnoreCase("lokal") && !prestasi[counter][3].equalsIgnoreCase("nasional") && !prestasi[counter][3].equalsIgnoreCase("internasional")) {
         System.out.println("input tidak valid!   : ");
         System.out.print("Masukkan Tingkat Prestasi   : ");
         prestasi[counter][3] = sc.nextLine();
