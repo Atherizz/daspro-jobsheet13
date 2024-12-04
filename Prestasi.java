@@ -26,10 +26,8 @@ public class Prestasi {
             case 1:
             System.out.println("Tambah Data Prestasi");
             inputPrestasi(prestasi, kategori, tahun);
-        
             break;
             case 2:
-            System.out.println("Seluruh Prestasi Yang Tercatat");
             tampilanPrestasi(prestasi, kategori, tahun);
             break;   
             case 3:
@@ -81,12 +79,16 @@ public class Prestasi {
     counter++;
     }
     static void tampilanPrestasi(String prestasi[][], String kategori[], int tahun[]) {
-
-        for (int i = 0; i < counter; i++) {
-            for (int j = 0; j < prestasi[0].length; j++) {
-                System.out.print(kategori[j] + " : " + prestasi[i][j] + "\t" + " | ");
-            }          
-            System.out.println("Tahun : " + tahun[i]);                                                       
+        if (counter == 0) {
+            System.out.println("Belum ada data prestasi yang ditambahkan!");
+        } else {
+            System.out.println("Seluruh Prestasi Yang Tercatat");
+            for (int i = 0; i < counter; i++) {
+                for (int j = 0; j < prestasi[0].length; j++) {
+                    System.out.print(kategori[j] + " : " + prestasi[i][j] + "\t" + " | ");
+                }          
+                System.out.println("Tahun : " + tahun[i]);                                                       
+            }
         }
     }
 
