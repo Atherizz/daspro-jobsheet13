@@ -95,6 +95,10 @@ public class Prestasi {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan Jenis Prestasi yang ingin dianalsisis : ");
         String jenisPrestasi = sc.nextLine();
+        boolean isEmpty = true;
+
+        System.out.print("Masukkan Tahun Prestasi yang ingin dianalsisis : ");
+        int tahun = sc.nextInt();
 
         for(int i = 0; i < counter; i++) {
             for (int j = 0; j < prestasi[0].length; j++) {
@@ -102,13 +106,17 @@ public class Prestasi {
                     continue;
                 }
                 if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                    System.out.print(kategori[j] + " : " + prestasi[i][j] + "\t" + " | ");
+                    if (tahunPrestasi[i] == tahun) {
+                        System.out.print(kategori[j] + " : " + prestasi[i][j] + " | ");
+                        isEmpty = false;
+                    } 
                 }
             }
-            if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                System.out.print("Tahun : " + tahunPrestasi[i]);
-            }
             System.out.println();
+        }
+
+        if (isEmpty) {
+            System.out.println("Data Prestasi Tidak Ditemukan!");
         }
     }
 }
