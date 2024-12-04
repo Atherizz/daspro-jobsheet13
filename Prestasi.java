@@ -97,18 +97,25 @@ public class Prestasi {
         System.out.print("Masukkan Jenis Prestasi yang ingin dianalsisis : ");
         String jenisPrestasi = sc.nextLine();
 
+        System.out.print("Masukkan Tahun Prestasi yang ingin dianalsisis : ");
+        int tahun = sc.nextInt();
+
         for(int i = 0; i < counter; i++) {
             for (int j = 0; j < prestasi[0].length; j++) {
                 if (j == 2) {
                     continue;
                 }
                 if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                    System.out.print(kategori[j] + " : " + prestasi[i][j] + "\t" + " | ");
+                    if (tahunPrestasi[i] == tahun) {
+                        System.out.print(kategori[j] + " : " + prestasi[i][j] + " | ");
+                    }
                 }
             }
-            if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                System.out.print("Tahun : " + tahunPrestasi[i]);
-            }
+            // if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
+            //     if (tahunPrestasi[i] == tahun) {
+            //     System.out.print("Tahun : " + tahunPrestasi[i]);
+            //     }
+            // }
             System.out.println();
         }
     }
