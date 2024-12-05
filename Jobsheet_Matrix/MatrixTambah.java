@@ -42,37 +42,6 @@ public class MatrixTambah {
             }
             System.out.println();
         }
-        System.out.println("Menampilkan hasil matriks: ");
-        for (int i = 0; i < matriks1.length; i++) {
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(newMatriks1[i][j] + " ");
-            }
-            if (i == 1) {
-                System.out.print("| + ");
-            } else {
-                System.out.print("|   ");
-            }
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(newMatriks2[i][j]+" ");
-            }
-            if (i == 1) {
-                System.out.print("| = ");
-            } else {
-                System.out.print("|   ");
-            }
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(matriks1[i][j] + matriks2[i][j]+ " ");
-            }
-            if (i == 1) {
-                System.out.print("|");
-            } else {
-                System.out.print("|");
-            }
-            System.out.println();
-        }
             input.close();
         }
 }
