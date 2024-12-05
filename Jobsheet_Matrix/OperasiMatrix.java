@@ -8,8 +8,7 @@ public class OperasiMatrix {
         
         int menu;
         String lanjut;
-        int baris, kolom;
-        
+     
         do {
             System.out.println("==== OPERASI MATRIX =====");
             System.out.println("1. Penjumlahan Matrix");
@@ -25,11 +24,11 @@ public class OperasiMatrix {
         switch (menu) {
             case 1:
             System.out.println("Penjumlahan Matrix");
-            // inputPrestasi(prestasi, kategori, tahun);
+            operasiMatrix('+');
             break;
             case 2:
             System.out.println("Pengurangan Matrix");
-            // tampilanPrestasi(prestasi, kategori, tahun);
+            operasiMatrix('-');
             break;   
             case 3:
             System.out.println("Perkalian Matrix");
@@ -55,6 +54,8 @@ public class OperasiMatrix {
             case 5:
             System.out.println("Transpose Matrix"); 
             transposeMatriks();
+            break;
+            case 6: 
             return;
             default:
             System.out.println("Input dari 1 - 5!");
@@ -88,7 +89,7 @@ public static void inputMatrix(int [][] matrix) {
 
 
 
-public static void penjumlahanMatrix () {
+public static void operasiMatrix (char operasi) {
     System.out.print("Masukkan jumlah baris matrix : ");
     int baris = sc.nextInt();
 
@@ -105,13 +106,27 @@ public static void penjumlahanMatrix () {
     System.out.println("Masukkan elemen matrix kedua : ");
     inputMatrix(matrix_2);
 
-    for (int i = 0; i < baris; i++) {
-        for (int j = 0; j < kolom; j++) {
-            matrixHasil[i][j] = matrix_1[i][j] + matrix_2[i][j];
+    switch (operasi) {
+        case '+':
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                matrixHasil[i][j] = matrix_1[i][j] + matrix_2[i][j];
+            }
         }
+        System.out.println("HASIL PENJUMLAHAN : ");
+        printMatrix(matrixHasil);
+        break;
+        case '-':
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                matrixHasil[i][j] = matrix_1[i][j] - matrix_2[i][j];
+            }
+        }
+        System.out.println("HASIL PENGURANGAN : ");
+        printMatrix(matrixHasil);
+        default:
+        break;
     }
-
-    
 }
 
 public static void inversOrdo2() {
