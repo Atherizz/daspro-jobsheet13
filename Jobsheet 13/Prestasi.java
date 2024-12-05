@@ -92,14 +92,14 @@ public class Prestasi {
         }
     }
 
-    public static void analisisPrestasi (String[][] prestasi, String[] kategori, int[] tahunPrestasi) {
+    public static void analisisPrestasi (String[][] prestasi, String[] kategori, int[] tahun) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan Jenis Prestasi yang ingin dianalsisis : ");
         String jenisPrestasi = sc.nextLine();
         boolean isEmpty = true;
 
         System.out.print("Masukkan Tahun Prestasi yang ingin dianalsisis : ");
-        int tahun = sc.nextInt();
+        int tahunPrestasi = sc.nextInt();
 
         for(int i = 0; i < counter; i++) {
             for (int j = 0; j < prestasi[0].length; j++) {
@@ -107,7 +107,7 @@ public class Prestasi {
                     continue;
                 }
                 if (prestasi[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                    if (tahunPrestasi[i] == tahun) {
+                    if (tahun[i] == tahunPrestasi) {
                         System.out.print(kategori[j] + " : " + prestasi[i][j] + " | ");
                         isEmpty = false;
                     } 
