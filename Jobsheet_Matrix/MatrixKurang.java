@@ -10,7 +10,6 @@ public class MatrixKurang {
         System.out.print("Masukkan jumlah kolom matriks pertama: ");
         int kol1 = input.nextInt();
     
-    
         int matriks1[][] = new int[row1][kol1];
         int newMatriks1[][] = new int[row1][kol1];
         System.out.println("Masukkan elemen matriks pertama: ");
@@ -40,40 +39,6 @@ public class MatrixKurang {
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < kol1; j++) {
                 System.out.print(matriks1[i][j] - matriks2[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("Menampilkan hasil matriks: ");
-        // Menampilkan matriks pertama
-        for (int i = 0; i < matriks1.length; i++) {
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(newMatriks1[i][j] + " ");
-            }
-            if (i == 1) {
-                System.out.print("| - ");
-            } else {
-                System.out.print("|   ");
-            }
-            // Menampilkan matriks kedua
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(newMatriks2[i][j]+" ");
-            }
-            if (i == 1) {
-                System.out.print("| = ");
-            } else {
-                System.out.print("|   ");
-            }
-            // Menampilkan hasil matriks
-            System.out.print("| ");
-            for (int j = 0; j < matriks1[0].length; j++) {
-                System.out.print(matriks1[i][j] - matriks2[i][j]+ " ");
-            }
-            if (i == 1) {
-                System.out.print("|");
-            } else {
-                System.out.print("|");
             }
             System.out.println();
         }
