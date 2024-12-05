@@ -67,18 +67,59 @@ public class OperasiMatrix {
     } while (lanjut.equalsIgnoreCase("y"));
 }
 
+public static void printMatrix(int [][] matrix) {
+    for(int i = 0; i < matrix.length; i++) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            System.out.print(matrix[i][j] + " ");
+        }
+        System.out.println();
+    }   
+}
+
+public static void inputMatrix(int [][] matrix) {
+    for(int i = 0; i < matrix.length; i++) {
+        System.out.println("BARIS KE " + (i+1));
+        for(int j = 0; j < matrix[0].length; j++) {
+            System.out.print( "Elemen [" + i  + "][" + j + "] : ");
+            matrix[i][j] = sc.nextInt();
+        }
+    }
+}
+
+
+
+public static void penjumlahanMatrix () {
+    System.out.print("Masukkan jumlah baris matrix : ");
+    int baris = sc.nextInt();
+
+    System.out.print("Masukkan jumlah kolom matrix : ");
+    int kolom = sc.nextInt();
+
+    int [][]matrix_1 = new int[baris][kolom];
+    int [][]matrix_2 = new int[baris][kolom];
+    int [][] matrixHasil = new int[baris][kolom];
+
+    System.out.println("Masukkan elemen matrix pertama : ");
+    inputMatrix(matrix_1);
+
+    System.out.println("Masukkan elemen matrix kedua : ");
+    inputMatrix(matrix_2);
+
+    for (int i = 0; i < baris; i++) {
+        for (int j = 0; j < kolom; j++) {
+            matrixHasil[i][j] = matrix_1[i][j] + matrix_2[i][j];
+        }
+    }
+
+    
+}
+
 public static void inversOrdo2() {
 
     int [][] matrix = new int[2][2];
 
     System.out.println("INPUT MATRIKS");
-        for(int i = 0; i < matrix.length; i++) {
-            System.out.println("BARIS KE " + (i+1));
-            for(int j = 0; j < matrix[0].length; j++) {
-                System.out.print( "Elemen [" + i  + "][" + j + "] : ");
-                matrix[i][j] = sc.nextInt();
-            }
-        }
+        inputMatrix(matrix);
         int A = matrix[0][0];
         int B = matrix[0][1];
         int C = matrix[1][0];
@@ -103,11 +144,13 @@ public static void inversOrdo2() {
             }
         }
 
-        System.out.println("\nTRANSPOSE MATRIX");
+        System.out.println("\nINVERS MATRIX");
         for(int i = 0; i < invers.length; i++) {
+            System.out.print(" | ");
             for (int j = 0; j < invers[0].length; j++) {
                 System.out.print(invers[i][j] + " ");
             }
+            System.out.print(" | ");
             System.out.println();
         }   
 }
@@ -120,21 +163,11 @@ public static void transposeMatriks () {
     int kolom = sc.nextInt();
 
     int [][] matrix = new int[baris][kolom];
-    for (int i = 0; i < baris; i++) {
-        for (int j = 0; j < kolom; j++) {
-            System.out.print( "Elemen [" + i  + "][" + j + "] : ");
-            matrix[i][j] = sc.nextInt();
-        }
-    }
+
+    System.out.println("Input Matrix");
+    inputMatrix(matrix);
     System.out.println("Matriks awal : ");
-    for (int i = 0; i < baris; i++) {
-        System.out.print("| ");
-        for (int j = 0; j < kolom; j++) {
-            System.out.print(matrix[i][j] + " ");
-        }
-        System.out.print("|");
-        System.out.println();
-    }
+    printMatrix(matrix);
     
     System.out.println("Matriks Transpose : ");
     for (int i = 0; i < kolom; i++) {
