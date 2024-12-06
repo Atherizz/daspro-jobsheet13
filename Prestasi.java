@@ -5,7 +5,7 @@ public class Prestasi {
         
         Scanner sc = new Scanner(System.in);
         String prestasi [][] = new String[100][4];
-        String kategori [] = {"Nama", "NIM", "Jenis", "Tingkat", "Tahun"};  
+        String kategori [] = {"Nama", "NIM", "Jenis", "Tingkat"};  
         int tahun [] = new int[100];      
         
         int menu;
@@ -65,7 +65,7 @@ public class Prestasi {
         prestasi[counter][3] = sc.nextLine();
     }
     
-    for (int i=0; i<=i;i++){
+    for (int i=0; i<=i; i++) {
         System.out.print("Masukkan Tahun Prestasi (2010 - 2024): ");
         tahun[counter] = sc.nextInt();
         if (tahun[counter] >= 2010 && tahun[counter] <= 2024) {
@@ -86,18 +86,18 @@ public class Prestasi {
                 for (int j = 0; j < prestasi[0].length; j++) {
                     System.out.print(kategori[j] + " : " + prestasi[i][j] + "\t" + " | ");
                 }          
-                System.out.println("Tahun : " + tahun[i]);                                                       
+                System.out.println("Tahun : " + tahun[i]);
             }
         }
     }
 
     public static void analisisPrestasi (String[][] prestasi, String[] kategori, int[] tahun) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan Jenis Prestasi yang ingin dianalsisis : ");
+        System.out.print("Masukkan Jenis Prestasi yang ingin dianalisis : ");
         String jenisPrestasi = sc.nextLine();
         boolean isEmpty = true;
 
-        System.out.print("Masukkan Tahun Prestasi yang ingin dianalsisis : ");
+        System.out.print("Masukkan Tahun Prestasi yang ingin dianalisis : ");
         int tahunPrestasi = sc.nextInt();
 
         for(int i = 0; i < counter; i++) {
@@ -111,12 +111,10 @@ public class Prestasi {
                         isEmpty = false;
                     } 
                 }
-            }
-            System.out.println();
+            } System.out.println();
         }
-
         if (isEmpty) {
-            System.out.println("Data Prestasi Tidak Ditemukan!");
+            System.out.print("Data Prestasi Tidak Ditemukan!\n");
         }
     }
 }
