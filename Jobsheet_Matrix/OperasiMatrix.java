@@ -38,15 +38,18 @@ public class OperasiMatrix {
             System.out.print("Masukkan jumlah ordo : ");
             int ordo = sc.nextInt();
 
+            while (ordo != 2 && ordo != 3) {
+                System.out.println("Masukkan 2 / 3 saja!");
+                System.out.print("Masukkan jumlah ordo : ");
+                ordo = sc.nextInt();
+            }
+
             switch (ordo) {
                 case 2:
                 inversOrdo2();
                 break;  
                 case 3:
                 inversOrdo3();
-                break;
-                default:
-                System.out.println("Masukkan 2 / 3 saja!");
                 break;
             }
             return;
