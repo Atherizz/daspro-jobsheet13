@@ -41,7 +41,7 @@ public class Prestasi {
             break;
         }
         
-        System.out.print("\nApakah anda ingin mengakses menu lagi? (y/n) : ");
+        System.out.print("Apakah anda ingin mengakses menu lagi? (y/n) : ");
         lanjut = sc.next();
         System.out.println();
     } while (lanjut.equalsIgnoreCase("y"));
@@ -77,6 +77,7 @@ public class Prestasi {
     System.out.println("Data prestasi berhasil ditambahkan.");
     counter++;
     }
+
     static void tampilanPrestasi(String prestasi[][], String kategori[], int tahun[]) {
         if (counter == 0) {
             System.out.println("Belum ada data prestasi yang ditambahkan!");
