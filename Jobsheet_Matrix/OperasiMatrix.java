@@ -52,7 +52,7 @@ public class OperasiMatrix {
                 inversOrdo3();
                 break;
             }
-            return;
+            break;
             case 5:
             System.out.println("Transpose Matrix"); 
             transposeMatriks();
@@ -215,15 +215,16 @@ public static void inversOrdo2() {
         int c = matrix[1][0];
         int d = matrix[1][1];
 
-        int b_minus = b * -1;
-        int c_minus = c * -1;
-        
         double det =  a * d - b * c;
-        double pecahan = 1 / det;
+
+        if (det == 0) {
+            System.out.println("Matriks Singular, Tidak Punya Invers!");
+            return;
+        }
 
         int [][] adjoint = {
-            {d, b_minus},
-            {c_minus, a}
+            {d, -b},
+            {-c, a}
         };
 
         double [][] invers = new double[2][2];
@@ -231,7 +232,7 @@ public static void inversOrdo2() {
         // MENGALIKAN DENGAN ADJOINT
         for(int i = 0; i < invers.length; i++) {
             for (int j = 0; j < invers[0].length;j++) {
-                invers[i][j] = pecahan * adjoint[i][j];
+                invers[i][j] = adjoint[i][j] / det;
             }
         }
 
@@ -257,7 +258,11 @@ public static void inversOrdo3() {
     int g = matrix[2][0] , h = matrix[2][1] , i = matrix[2][2];
 
     double det = ((a*e*i) + (b*f*g) + (c*d*h)) - ((c*e*g) + (a*f*h) + (b*d*i)); 
-    double pecahan = 1 / det;
+
+    if (det == 0) {
+        System.out.println("Matriks Singular, Tidak Punya Invers!");
+        return;
+    }
 
     int det_a = (e*i) - (f*h);
     int det_b = ((d*i) - (f*g)) * -1;
@@ -289,7 +294,7 @@ public static void inversOrdo3() {
     // MENGALIKAN DENGAN ADJOINT
     for(int j = 0; j < invers.length; j++) {
         for (int k = 0; k < invers[0].length;k++) {
-            invers[j][k] = pecahan * adjoint[j][k];
+            invers[j][k] = adjoint[j][k] / det;
         }
     }
 
